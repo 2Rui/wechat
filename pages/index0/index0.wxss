@@ -1,0 +1,26 @@
+/* pages/index0/index0.wxss */
+page{
+  height:100%;
+  background:pink;
+}
+.user{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.avatarUrl{
+  width:200rpx;
+  height:200rpx;
+  border-radius:50%;
+  overflow:hidden;
+  margin-top:110rpx;
+}
+.msg{
+  margin:100rpx auto;
+}
+.goChat{
+  padding:10px 30px;
+  border:1px solid red;
+  text-align:center;
+  margin-top:100rpx;
+}

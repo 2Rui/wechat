@@ -1,0 +1,9 @@
+<view class="user">
+<view class="avatarUrl">
+<open-data type="userAvatarUrl"></open-data>
+</view>
+<view class="msg">
+ Hello<open-data type="userNickName"></open-data>
+</view>
+<view class="goChat" bindtap="goChat">开启小程序之旅</view>
+</view>

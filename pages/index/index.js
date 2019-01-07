@@ -50,20 +50,24 @@ Page({
          avatarUrl: e.detail.userInfo.avatarUrl
        })
      }else{
-       //用户点击了失败
-       wx.getUserInfo({
-         success: res => {
-           app.globalData.userinfo = res.userInfo;
-           this.setData({
-             avatarUrl: res.userInfo.avatarUrl
-           })
-         },
-         fail: res => {
-           console.log('授权失败')
-         }
-       })
+       //用户点击了拒绝授权，wx.getUserInfo这个方法，则不会走success,只会走fail,可以在这里弹出提示框，让用户去授权
+       this.selfModal();
      }
     
+  },
+  selfModal:function(){
+    wx.showModal({
+      title:'提示',
+      content:'请接收授权，否则会影响你的使用效果',
+      showCancel:false,//不显示取消按钮
+      success:res=>{
+        if(res.confirm){
+          console.log('用户点击了确定')
+        }else if(res.cancel){
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
 
   /**
