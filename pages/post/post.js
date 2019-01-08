@@ -7,40 +7,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postlist: postData.postList,
+    postlist:[],
     a:'123'
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 生命周期函数--页面加载时触发，一个页面只会执行一次，可以在这里获取进入当前页面的路径的参数optins
    */
   onLoad: function (options) {
-    
+    console.log('onLoad'+this.data.a);
+     this.setData({
+       postlist: postData.postList
+     })
   }, 
-
+  goDetail (e){
+    const postid=e.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url:'/pages/detail/detail?postid='+postid
+    })
+  },
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 生命周期函数--监听页面初次渲染完成,一个页面只会执行一次，可以与视图层交互
    */
   onReady: function () {
-
+    console.log('onReady' + this.data.a);
   },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 生命周期函数--监听页面显示,或者切入前台
    */
   onShow: function () {
-
+    console.log('onShow' + this.data.a);
   },
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 生命周期函数--监听页面隐藏或者切入后台，如navigateTo/点击了tab切换
    */
   onHide: function () {
 
   },
 
   /**
-   * 生命周期函数--监听页面卸载
+   * 生命周期函数--监听页面卸载，如redirectTo/navigateBack
    */
   onUnload: function () {
 

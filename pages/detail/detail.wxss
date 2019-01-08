@@ -1,0 +1,63 @@
+/* pages/detail/detail.wxss */
+.detailCont{
+  display:flex;
+  flex-direction:column;
+}
+.detailMsg{
+  flex-direction:row;
+}
+.musicbg{
+  width:100%;
+  position:relative;
+  height:400rpx;
+}
+.bg{
+  width:100%;
+  height:400rpx
+}
+.music{
+  width:100rpx;
+  height:100rpx;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+.avatar{
+  width:60rpx;
+  height:60rpx;
+  vertical-align:middle;
+}
+.fabiao{
+  vertical-align:middle;
+}
+.name{
+ vertical-align:middle;
+}
+.time{
+vertical-align:middle;
+}
+.title{
+  font-weight:600;
+  font-size:40rpx;
+  margin:15rpx 20rpx 50rpx 20rpx;
+}
+.shou{
+  height:80rpx;
+  border-top:1px solid #ccc;
+  display:flex;
+  justify-content:flex-end;
+}
+.shou image{
+  width:80rpx;
+  height:80rpx;
+  margin-right:20rpx;
+  margin-top:-40rpx;
+}
+.detailPage{
+    font-size:28rpx;
+    padding-top:5rpx;
+    margin:0  20rpx 20rpx 20rpx;
+    letter-spacing:2rpx;
+    line-height: 40rpx;
+}

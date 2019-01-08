@@ -1,5 +1,7 @@
 App({
   onLaunch:function(){
+    //获取全局唯一的背景音频管理器
+    this.appMusic=wx.getBackgroundAudioManager();
     console.log('onlaunch')
     //先判断用户已经授权了那些信息
     wx.getSetting({
@@ -22,6 +24,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
   }
 })

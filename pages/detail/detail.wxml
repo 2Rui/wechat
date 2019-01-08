@@ -1,0 +1,21 @@
+<!--pages/detail/detail.wxml-->
+<view class="detailCont">
+<view class="musicbg">
+<image src="{{imgSrc}}" class="bg"/>
+<image wx:if="{{isStart}}" src="/images/music/music-stop.png" class="music" bindtap="goMusic"/>
+<image wx:else src="/images/music/music-start.png" class="music" bindtap="goMusic"/>
+</view>
+<view class="detailMsg">
+<image src="{{avatar}}" class="avatar"/>
+<text class="name">{{author}}</text>
+<text class="fabiao">发表于</text>
+<text class="time">{{dateTime}}</text>
+</view>
+<text class="title">{{title}}</text>
+<view class="shou">
+<image wx:if="{{!isCollect}}" src="/images/icon/collection-anti.png" bindtap="collect"/>
+<image wx:else src="/images/icon/collection.png" bindtap="collect"/>
+<image src="/images/icon/share.png"/>
+</view>
+<text class="detailPage">{{detail}}</text>
+</view>

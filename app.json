@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/post/post",
+    "pages/detail/detail",
     "pages/index0/index0"
   ],
   "window":{
     "navigationBarBackgroundColor":"#405f80"
-  }
+  },
+  "requiredBackgroundModes": ["audio"]
 }

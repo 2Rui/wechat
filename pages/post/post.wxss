@@ -1,7 +1,8 @@
 /* pages/post/post.wxss */
-page{
+@import './post-item/post-item.wxss';
+/* page{
   background-color:#ccc;
-}
+} */
 .postCont{
   width:100%;
   height:400rpx;
@@ -9,64 +10,4 @@ page{
 .slide-image{
   width:100%;
   height:400rpx;
-}
-.postCnt{
-  display:flex;
-  flex-direction: column;
-  background-color:#fff;
-  margin-top:20rpx;
-  margin-bottom:40rpx;
-  padding-botom:5px;
-  border-bottom:1px solid #ededed;
-  border-top:1px solid #ededed;
-}
-.avator{
-  display:flex;
-  margin:10rpx 0 20rpx 10rpx;
-}
-.post-like{
-   flex-direction:row;
-   font-size:13px;
-    line-height: 16px;
-    margin-left: 10px;
-}
-.chat,.collect{
-  height:16px;
-    width:16px;
-    margin-right: 8px;
-    vertical-align:middle;
-}
-.like-text{
-   vertical-align:middle;
-    margin-right: 20px;
-}
-.time{
-  line-height:60rpx;
-  margin-left:20rpx;
-  margin-bottom:5px;
-  font-size:25rpx;
-}
-.avatarimg{
-  width:60rpx;
-  height:60rpx;
-  vertical-align:middle;
-}
-.postbg{
-  width:100%;
-  height:340rpx;
-  margin-left:16px;
-  margin:auto 0;
-}
-.post-title{
-  font-size:34rpx;
-  color:#333;
-  margin:0 10px 0 10px;
-  font-weight:600;
-}
-.detail{
-    font-size:28rpx;
-    margin-bottom:20rpx;
-    margin-left: 20rpx;
-    letter-spacing:2rpx;
-    line-height: 40rpx;
 }

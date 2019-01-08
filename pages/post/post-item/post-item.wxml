@@ -1,0 +1,18 @@
+<template name="postItem">
+<view class="postCnt">
+<view class="avator">
+<image src="{{avatar}}" class="avatarimg"/>
+<text class="time">{{date}}</text>
+</view>
+<text class="post-title">{{title}}</text>
+<image src="{{imgSrc}}" class="postbg"/>
+<text class="detail">{{content}}</text>
+<!-- 收藏 -->
+<view class="post-like">
+<image src="/images/icon/chat.png" class="chat"/>
+<text class="like-text">{{reading}}</text>
+<image src="/images/icon/collection-anti.png" class="collect"/>
+<text class="like-text">{{collection}}</text>
+</view>
+</view>
+</template>

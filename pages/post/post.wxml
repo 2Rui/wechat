@@ -1,3 +1,5 @@
+<!-- 引入外部的模板 -->
+<import src="./post-item/post-item.wxml" />
 <view>
 <swiper circular  class="postCont" autoplay>
   <swiper-item>
@@ -11,22 +13,8 @@
   </swiper-item>
 </swiper>
 </view>
-
-<view>
-<view class="postCnt" wx:for="{{postlist}}" wx:for-index="index0" wx:for-item="item0">
-<view class="avator">
-<image src="{{item0.avatar}}" class="avatarimg"/>
-<text class="time">{{item0.date}}</text>
+<block wx:for="{{postlist}}" wx:for-index="index0" wx:for-item="item0" wx:key="{{item0.postId}}" >
+<view catchtap="goDetail" data-postid="{{item0.postId}}">
+<template is="postItem" data="{{...item0}}"/>
 </view>
-<text class="post-title">{{item0.title}}</text>
-<image src="{{item0.imgSrc}}" class="postbg"/>
-<text class="detail">{{item0.content}}</text>
-<!-- 收藏 -->
-<view class="post-like">
-<image src="/images/icon/chat.png" class="chat"/>
-<text class="like-text">92</text>
-<image src="/images/icon/collection-anti.png" class="collect"/>
-<text class="like-text">65</text>
-</view>
-</view>
-</view>
+</block>
