@@ -1,0 +1,8 @@
+<!--pages/movie/movie.wxml-->
+<!-- 模板的引用 -->
+<import src="./movie-list/movie-list.wxml" />
+<view>
+<template is="movieListTem" />
+</view>
+
+

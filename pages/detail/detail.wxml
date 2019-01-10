@@ -1,9 +1,11 @@
 <!--pages/detail/detail.wxml-->
 <view class="detailCont">
 <view class="musicbg">
+<!-- <image src="{{isStart?music.coverImg:imgSrc}}" class="bg"/> -->
 <image src="{{imgSrc}}" class="bg"/>
-<image wx:if="{{isStart}}" src="/images/music/music-stop.png" class="music" bindtap="goMusic"/>
-<image wx:else src="/images/music/music-start.png" class="music" bindtap="goMusic"/>
+<!-- <image wx:if="{{isStart}}" src="/images/music/music-stop.png" class="music" bindtap="goMusic"/>
+<image wx:else src="/images/music/music-start.png" class="music" bindtap="goMusic"/> -->
+<image  src="{{isStart?'/images/music/music-stop.png':'/images/music/music-start.png'}}" class="music" bindtap="goMusic"/>
 </view>
 <view class="detailMsg">
 <image src="{{avatar}}" class="avatar"/>
@@ -13,9 +15,10 @@
 </view>
 <text class="title">{{title}}</text>
 <view class="shou">
-<image wx:if="{{!isCollect}}" src="/images/icon/collection-anti.png" bindtap="collect"/>
-<image wx:else src="/images/icon/collection.png" bindtap="collect"/>
-<image src="/images/icon/share.png"/>
+<image wx:if="{{isCollect}}" src="/images/icon/collection.png" bindtap="collect"/>
+<image wx:else src="/images/icon/collection-anti.png" bindtap="collect"/>
+<!-- <image src="/images/icon/share.png"/> -->
 </view>
+<!-- <button open-type="share">转发</button> -->
 <text class="detailPage">{{detail}}</text>
 </view>

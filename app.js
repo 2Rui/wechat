@@ -25,5 +25,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    postId:-1,
+    isStop:false
   }
 })

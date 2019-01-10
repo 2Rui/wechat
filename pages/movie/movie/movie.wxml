@@ -1,0 +1,9 @@
+<!-- 引用星星模板 -->
+<import src="../stars/stars.wxml" />
+<template name="movieTemplate">
+  <view class="movie-container">
+    <image src="/images/avatar/1.png" class="mov-img"/>
+    <text class="name">来自星星的你</text>
+    <template is="satrsTemplate" />
+  </view>
+</template>

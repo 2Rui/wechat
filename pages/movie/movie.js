@@ -1,5 +1,9 @@
-// pages/index0/index0.js
+// pages/movie/movie.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
 
   },
@@ -8,15 +12,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.request({
+      url: 'https://douban.uieee.com/v2/movie/in_theaters?start=0&count=3',
+      header:{
+          'content-type':'application/wxml'
+      },
+      data:{},
+      method:'GET',
+     success:function(res){
+        
+     }
+    })
 
   },
-  goChat (){
-     wx.switchTab({//关闭非tabBar的页面，跳转到tabBar 还可以relaunch,
-       url: '/pages/post/post',
-     })
-  },
-
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成
