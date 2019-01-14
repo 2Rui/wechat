@@ -1,7 +1,7 @@
 <template name="satrsTemplate">
   <view class="stars-container">
      <view class="stars">
-     <block wx:for="{{star}}">
+     <block wx:for="{{star}}" wx:key="{{index}}">
     <image wx:if="{{item}}" src="/images/icon/star.png" />
     <image wx:else src="/images/icon/none-star.png" />
     </block>

@@ -37,6 +37,13 @@ Page({
     //调用公共的缓存数据的方法
     utils.http(url, this.manageData);
   },
+  //跳转到电影详情
+  goDetail :function(e){
+ const id=e.currentTarget.dataset.movieid;
+ wx.navigateTo({
+   url:'../../movieDetail/movieDetail?id='+id
+ })
+  },
   //处理数据
   manageData:function(data) {  
     var totalMovie=[];   

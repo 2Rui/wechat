@@ -1,8 +1,9 @@
 <!--pages/movie/moremovie/moremovie.wxml-->
 <import src="../movie/movie.wxml" />
 <view class="cont">
-<block wx:for="{{movies}}">
+<block wx:for="{{movies}}" wx:key="{{index}}">
 <template is="movieTemplate" data="{{...item}}"/>
 </block>
 
 </view>
+ 

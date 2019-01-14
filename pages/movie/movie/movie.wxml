@@ -1,7 +1,7 @@
 <!-- 引用星星模板 -->
 <import src="../stars/stars.wxml" />
 <template name="movieTemplate">
-  <view class="movie-container" catchtap="goDetail" data-movieId="{{id}}">
+  <view class="movie-container" bindtap="goDetail" data-movieId="{{id}}">
     <image src="{{image}}" class="mov-img"/>
     <text class="name">{{name}}</text>
     <template is="satrsTemplate" data="{{star:star,average:average}}"/>

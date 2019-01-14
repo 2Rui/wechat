@@ -30,7 +30,7 @@ Page({
   },
   //跳转电影的详情页面
   goDetail (e){
-   const id=e.currentTarget.dataset.id;
+   const id=e.currentTarget.dataset.movieid;
     wx.navigateTo({
       url: '../movieDetail/movieDetail?id='+id,
     })

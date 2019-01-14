@@ -1,2 +1,58 @@
 <!--pages/movieDetail/movieDetail.wxml-->
-<text>pages/movieDetail/movieDetail.wxml</text>
+<!-- 引入所需的星星模板 -->
+<import src="../movie/stars/stars.wxml" />
+<view class="container">
+  <image src="{{movie.movieImg}}" class="head-image" />
+  <view class="titleHeader">
+    <text class="title">{{movie.title}}</text>
+    <view class="type">
+      <text>{{movie.country}}</text>
+      <text>{{movie.year}}</text>
+    </view>
+    <view class="like">
+      <text class="highlight-font">{{movie.like}}</text>
+      <text class="plain-font">喜欢</text>
+      <text class="highlight-font">{{movie.ping}}</text>
+      <text class="plain-font">评论</text>
+      <image src="{{movie.movieImg}}" class="movieBg" />
+    </view>
+  </view>
+  <view class="detail">
+    <view class="original-title">
+      <text></text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+      <template is="satrsTemplate" data="{{star:movie.stars,average:movie.average}}"/>
+    </view>
+    <view class="flex-row">
+      <text class="mark">导演</text>
+      <text>{{movie.daoyan}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">演员</text>
+      <text>{{movie.yanyuan}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">类型</text>
+      <text>{{movie.type}}</text>
+    </view>
+  </view>
+</view>
+<view class="movieJie">
+  <text class="jieTitle">剧情介绍</text>
+  <text class="jieContent">
+{{movie.summary}}
+</text>
+</view>
+<view class="movieMen">
+  <text class="menTitle">影人</text>
+  <scroll-view scroll-x="{{true}}" class="cast-imgs" style="width:100%">
+  <block wx:for="{{movie.actatrs}}" wx:key="{{item.id}}">
+  <view class="cast-container">
+  <image src="{{item.image}}" class="cast-image"/>
+  <text class="cast-name">{{item.name}}</text>
+  </view>
+  </block>
+  </scroll-view>
+</view>
