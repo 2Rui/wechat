@@ -3,6 +3,8 @@
 display:flex;
 flex-direction:column;
 background:#fff;
+width:98%;
+margin:0 auto;
 }
 .title{
 
@@ -11,14 +13,18 @@ justify-content: space-between;
 }
 .solgn{
 font-size:24rpx;
+line-height: 50rpx;
+padding-left:22rpx;
 }
 .more{
-
+ padding-right:22rpx;
 }
 .more-text{
 padding-right:10rpx;
 vertical-align:middle;
 color:#1f4ba5;
+font-size:24rpx;
+line-height:50rpx;
 }
 .more image{
   width:9rpx;
@@ -28,4 +34,5 @@ color:#1f4ba5;
 .temCont{
   display:flex;
   flex-direction:row;
+  flex-wrap: wrap;
 }

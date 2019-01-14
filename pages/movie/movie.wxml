@@ -2,7 +2,14 @@
 <!-- 模板的引用 -->
 <import src="./movie-list/movie-list.wxml" />
 <view>
-<template is="movieListTem" />
+<!-- 正在热映 -->
+<view >
+<template is="movieListTem" data="{{...hot}}"/>
+</view>
+<!-- 即将上线 -->
+<template is="movieListTem" data="{{...comming}}"/>
+<!-- top250 -->
+<template is="movieListTem" data="{{...top}}"/>
 </view>
 
 

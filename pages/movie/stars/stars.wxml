@@ -1,11 +1,11 @@
 <template name="satrsTemplate">
   <view class="stars-container">
      <view class="stars">
-    <image src="/images/icon/star.png" />
-    <image src="/images/icon/star.png" />
-    <image src="/images/icon/star.png" />
-    <image src="/images/icon/none-star.png" />
+     <block wx:for="{{star}}">
+    <image wx:if="{{item}}" src="/images/icon/star.png" />
+    <image wx:else src="/images/icon/none-star.png" />
+    </block>
      </view>
-    <text class="stars-info">9</text>
+    <text class="stars-info">{{average}}</text>
   </view>
 </template>

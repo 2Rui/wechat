@@ -24,6 +24,7 @@ App({
     })
   },
   globalData: {
+    douban:'https://douban.uieee.com',
     userInfo: null,
     postId:-1,
     isStop:false

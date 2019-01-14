@@ -8,8 +8,9 @@
  width:200rpx;
  height:270rpx;
  padding-bottom:20rpx;
+ margin-top:20rpx;
 }
 .name{
-margin-bottom:16rpx;
+margin-bottom:10rpx;
 font-size:24rpx;
 }
