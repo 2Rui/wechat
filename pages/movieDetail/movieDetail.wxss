@@ -4,6 +4,12 @@
   display:flex;
   flex-direction:column;
 }
+.hr{
+    margin-top:45rpx;
+    height:1px;
+    width: 100%;
+    background-color: #d9d9d9;
+}
 .titleHeader{
   width: 100%;
     height: 320rpx;

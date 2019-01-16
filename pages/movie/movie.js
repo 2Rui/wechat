@@ -10,12 +10,40 @@ Page({
   data: {
       hot:{},
       top:{},
-      comming:{}
+      comming:{},
+      search:{},
+      isSearch:false,//控制搜索页面的显示隐藏
+      inputVal:''
   }, 
 
   /**
    * 生命周期函数--监听页面加载
    */
+  //搜索框输入时
+  getInputVal (e){
+  },
+  //聚焦
+  getFocus (){
+    this.setData({
+      isSearch:true
+    });
+  },
+  //失去焦点
+  getConfirm (e){
+    console.log('点击确定或者回车')
+    const val = e.detail.value;
+    //请求数据
+    const url = app.globalData.douban + '/v2/movie/search?q='+val;
+    this.getMovieInfo(url, 'search', '');
+  },
+  onCancelImgTap (){
+    //退出搜索页面
+    this.setData({
+      isSearch:false,
+      inputVal:'',
+     search:{}
+    });
+  },
   onLoad:function (options) {
       //  正在热映
     const hotUrl = app.globalData.douban +'/v2/movie/in_theaters?start=0&count=3';
@@ -74,19 +102,23 @@ Page({
     arr.push(obj);
   }
   movieObj["movies"]=arr;
-  if(type=='hot'){
-    this.setData({
-      hot: movieObj
-    })
-  }else if(type=='comming'){
-    this.setData({
-      comming: movieObj
-    })
-  }else if(type=='top'){
-    this.setData({
-      top: movieObj
-    })
-  }
+  //不写下面的if-else，这样简写，理解下直接setData(obj)是什么意思
+  let readyData={};
+  readyData[type]=movieObj;
+  this.setData(readyData);
+  // if(type=='hot'){
+  //   this.setData({
+  //     hot: movieObj
+  //   })
+  // }else if(type=='comming'){
+  //   this.setData({
+  //     comming: movieObj
+  //   })
+  // }else if(type=='top'){
+  //   this.setData({
+  //     top: movieObj
+  //   })
+  // }
   
   },
 

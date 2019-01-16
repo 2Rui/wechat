@@ -1,2 +1,39 @@
 /* pages/movie/movie.wxss */
-@import './movie-list/movie-list.wxss'
+@import './movie-list/movie-list.wxss';
+@import './movie-grid/movie-grid.wxss';
+.container{
+  background:#f2f2f2;
+}
+.template{
+  margin-bottom:30rpx;
+}
+.search{
+  background-color: #f2f2f2;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.search-image{
+margin:auto 0 auto 20rpx;
+}
+.place{
+font-size:14px;
+color:#d1d1d1;
+margin-left:20rpx;
+}
+.searchInput{
+  margin-left:20px;
+  width:600rpx;
+  height:100%;
+  font-size:28rpx;
+}
+.search-view{
+  position:absolute;
+  top:80rpx;
+}
+.xx-img{
+    height: 30rpx;
+    width: 30rpx;
+    margin:auto 0 auto 10rpx;
+}

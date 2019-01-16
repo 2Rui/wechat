@@ -1,0 +1,23 @@
+<!--pages/form/form.wxml-->
+<text>radio</text>
+<form bindsubmit="getAllVal" bindreset='resetAll'>
+<radio-group bindchange="getValue" name="aa-radio">
+<radio checked value="radio0">香蕉</radio>
+<radio disabled value="radio1">苹果</radio>
+<radio  value="radio2" color="red">西瓜</radio>
+</radio-group>
+<text>checkbox</text>
+<checkbox-group bindchange="getValue" name="bb-checkbox">
+<label class="checkbox">
+<checkbox value="checkbox0" />西红柿
+</label>
+<label class="checkbox">
+<checkbox value="checkbox1" />黄瓜
+</label>
+<label class="checkbox">
+<checkbox value="checkbox2" />鸡蛋
+</label>
+</checkbox-group>
+<button form-type="submit">提交</button>
+<button form-type="reset"> 清空</button>
+</form>

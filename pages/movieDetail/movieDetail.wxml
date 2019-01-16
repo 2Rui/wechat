@@ -2,8 +2,8 @@
 <!-- 引入所需的星星模板 -->
 <import src="../movie/stars/stars.wxml" />
 <view class="container">
-  <image src="{{movie.movieImg}}" class="head-image" />
-  <view class="titleHeader">
+  <image src="{{movie.movieImg}}" class="head-image" mode="asceptFill" />
+  <view class="titleHeader" data-src="{{movie.movieImg}}" catchtap="showImg">
     <text class="title">{{movie.title}}</text>
     <view class="type">
       <text>{{movie.country}}</text>
@@ -14,12 +14,12 @@
       <text class="plain-font">喜欢</text>
       <text class="highlight-font">{{movie.ping}}</text>
       <text class="plain-font">评论</text>
-      <image src="{{movie.movieImg}}" class="movieBg" />
+      <image src="{{movie.movieImg}}" class="movieBg" catchtap="showImg" data-src="{{movie.movieImg}}"/>
     </view>
   </view>
   <view class="detail">
     <view class="original-title">
-      <text></text>
+      <text>{{movie.title}}</text>
     </view>
     <view class="flex-row">
       <text class="mark">评分</text>
@@ -39,17 +39,19 @@
     </view>
   </view>
 </view>
+<view class="hr"></view>
 <view class="movieJie">
   <text class="jieTitle">剧情介绍</text>
   <text class="jieContent">
 {{movie.summary}}
 </text>
 </view>
+<view class="hr"></view>
 <view class="movieMen">
   <text class="menTitle">影人</text>
   <scroll-view scroll-x="{{true}}" class="cast-imgs" style="width:100%">
   <block wx:for="{{movie.actatrs}}" wx:key="{{item.id}}">
-  <view class="cast-container">
+  <view class="cast-container" catchtap="showImg" data-src="{{item.image}}">
   <image src="{{item.image}}" class="cast-image"/>
   <text class="cast-name">{{item.name}}</text>
   </view>

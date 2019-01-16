@@ -1,15 +1,27 @@
 <!--pages/movie/movie.wxml-->
 <!-- 模板的引用 -->
 <import src="./movie-list/movie-list.wxml" />
-<view>
-<!-- 正在热映 -->
-<view >
-<template is="movieListTem" data="{{...hot}}"/>
-</view>
-<!-- 即将上线 -->
-<template is="movieListTem" data="{{...comming}}"/>
-<!-- top250 -->
-<template is="movieListTem" data="{{...top}}"/>
-</view>
-
-
+<import src="./movie-grid/movie-grid.wxml"/>
+<view class="search">
+ <icon type="search" size="13" color="#405f80" class="search-image"></icon>
+  <input type="text" placeholder="请输入您喜欢大的演员或影片" bindinput='getInputVal' bindfocus='getFocus' bindconfirm="getConfirm" class="searchInput" placeholder-class="place" value="{{inputVal}}"/>
+  <image wx:if="{{isSearch}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
+  </view>
+  <!-- 正在热映 -->
+  <view class="container" wx:if="{{!isSearch}}">
+    <view class="template">
+      <template is="movieListTem" data="{{...hot}}" />
+    </view>
+    <!-- 即将上线 -->
+    <view class="template">
+      <template is="movieListTem" data="{{...comming}}" />
+      <!-- top250 -->
+    </view>
+    <view class="template">
+      <template is="movieListTem" data="{{...top}}" />
+    </view>
+  </view>
+  <!-- 搜索页面的显示 -->
+  <view class="search-view" wx:if="{{isSearch}}">
+  <template is="gridTemplte" data="{{...search}}"/>
+  </view>

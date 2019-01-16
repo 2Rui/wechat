@@ -39,6 +39,7 @@ Page({
     let data=res.data;
     let acator=[];
     let acators=[];
+    //演员的循环
     for(var i in data.casts){
       let obj={
         name: data.casts[i]["name"],
@@ -66,8 +67,15 @@ Page({
     this.setData({
       movie:movie
     })
-  }
-,
+  },
+  //查看图片
+  showImg (e){
+    const url=e.currentTarget.dataset.src;
+    //新页面中全屏预览图片
+    wx.previewImage({
+      urls: [url],
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

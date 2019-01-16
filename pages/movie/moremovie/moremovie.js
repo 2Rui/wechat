@@ -21,16 +21,31 @@ Page({
     var url='';
     var title='';
     const type = options.type;
-    //请求数据
-    if(type=='hot'){
-      url =app.globalData.douban + '/v2/movie/in_theaters';
-      title='正在热映';
-    }else if(type=='comming'){
-      url = app.globalData.douban + '/v2/movie/coming_soon';
-      title = '即将上线';
-    }else if(type=='top'){
-      url = app.globalData.douban + '/v2/movie/top250';
-      title = 'Top50';
+    // //请求数据
+    // if(type=='hot'){
+    //   url =app.globalData.douban + '/v2/movie/in_theaters';
+    //   title='正在热映';
+    // }else if(type=='comming'){
+    //   url = app.globalData.douban + '/v2/movie/coming_soon';
+    //   title = '即将上线';
+    // }else if(type=='top'){
+    //   url = app.globalData.douban + '/v2/movie/top250';
+    //   title = 'Top50';
+    // }
+    //使用switch case
+    switch(type){
+    case 'hot':
+        url = app.globalData.douban + '/v2/movie/in_theaters';
+        title = '正在热映';
+    break;
+    case 'comming':
+        url = app.globalData.douban + '/v2/movie/coming_soon';
+        title = '即将上线';
+    break;
+    case 'top':
+        url = app.globalData.douban + '/v2/movie/top250';
+        title = 'Top50';
+    break;
     }
     this.data.movieUrl=url;
     this.data.navationBarTitle=title;
