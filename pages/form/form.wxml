@@ -18,6 +18,10 @@
 <checkbox value="checkbox2" />鸡蛋
 </label>
 </checkbox-group>
+<text>switch</text>
+<switch type="switch" checked bindchange="getValue" name="cc-switch"/>
+<text>slider</text>
+<slider value="20" show-value backgroundColor="#ccc" name="dd-slider" step="20"></slider>
 <button form-type="submit">提交</button>
 <button form-type="reset"> 清空</button>
 </form>
