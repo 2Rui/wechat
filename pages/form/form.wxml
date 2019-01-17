@@ -2,7 +2,7 @@
 <text>radio</text>
 <form bindsubmit="getAllVal" bindreset='resetAll'>
 <radio-group bindchange="getValue" name="aa-radio">
-<radio checked value="radio0">香蕉</radio>
+<radio checked value="radio0">香蕉2</radio>
 <radio disabled value="radio1">苹果</radio>
 <radio  value="radio2" color="red">西瓜</radio>
 </radio-group>
