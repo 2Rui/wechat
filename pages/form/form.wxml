@@ -20,8 +20,9 @@
 </checkbox-group>
 <text>switch</text>
 <switch type="switch" checked bindchange="getValue" name="cc-switch"/>
-<text>slider</text>
+<view>slider</view>
 <slider value="20" show-value backgroundColor="#ccc" activeColor="#333" block-color="#666" name="dd-slider" step="20"></slider>
+<view>hahha</view>
 <button form-type="submit">提交</button>
 <button form-type="reset"> 清空</button>
 </form>
