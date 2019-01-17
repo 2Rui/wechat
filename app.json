@@ -1,10 +1,10 @@
 {
   "pages": [
+        "pages/movie/movie",
     "pages/form/form",
     "pages/map/map",
-    
     "pages/post/post",
-    "pages/movie/movie",
+
     "pages/movie/moremovie/moremovie",
     "pages/index0/index0",
     "pages/detail/detail",

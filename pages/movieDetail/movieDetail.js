@@ -1,6 +1,7 @@
 // pages/movieDetail/movieDetail.js
 const app=getApp();
 const utils=require('../../utils/utils.js');
+import {Movie} from './class/Movie.js';
 Page({
 
   /**
@@ -19,7 +20,13 @@ Page({
     //获取单个电影的基本信息
     var url = app.globalData.douban+
       "/v2/movie/subject/" + movieID;
-      this.getInfo(url);
+      var movieObj=new Movie(url);
+      movieObj.getInfo((movie)=>{
+        this.setData({
+          movie:movie
+        })
+      });
+      //this.getInfo(url);
   },
   //获取数据
   getInfo (url){

@@ -15,7 +15,20 @@ Page({
     console.log(e.detail.value)
   },
   getAllVal (e){
-console.log(e.detail.value)
+console.log(e.detail.value);
+wx.request({
+  url: 'http://bl.7yue.pro/v1/classic/latest?',
+  method:'GET',
+  header:{
+    appkey:'98HcsgdJ3mx4Ufcm'
+  },
+  success:function(res){
+    console.log(res);
+  },
+  error:function(error){
+   console.log(error)
+  }
+})
   },
   resetAll (){
 
