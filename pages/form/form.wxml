@@ -21,7 +21,7 @@
 <text>switch</text>
 <switch type="switch" checked bindchange="getValue" name="cc-switch"/>
 <text>slider</text>
-<slider value="20" show-value backgroundColor="#ccc" name="dd-slider" step="20"></slider>
+<slider value="20" show-value backgroundColor="#ccc" activeColor="#333" block-color="#666" name="dd-slider" step="20"></slider>
 <button form-type="submit">提交</button>
 <button form-type="reset"> 清空</button>
 </form>
