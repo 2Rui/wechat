@@ -1,7 +1,8 @@
 {
   "pages": [
-        "pages/movie/movie",
     "pages/form/form",
+        "pages/movie/movie",
+   
     "pages/map/map",
     "pages/post/post",
 

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgsrc:[]
   },
 
   /**
@@ -16,19 +16,45 @@ Page({
   },
   getAllVal (e){
 console.log(e.detail.value);
-wx.request({
-  url: 'http://bl.7yue.pro/v1/classic/latest?',
-  method:'GET',
-  header:{
-    appkey:'98HcsgdJ3mx4Ufcm'
+ //上传图片
+    wx.chooseImage({
+      count: 2,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success:(res)=> {
+        var fileArr = res.tempFilePaths;
+        // tempFilePath可以作为img标签的src属性显示图片
+        console.log(res.tempFilePaths);//临时文件路径列表
+        console.log(res.tempFiles);//临时文件列表[{}]包括路径path与大小size
+        //const tempFilePaths = res.tempFilePaths
+        var arr=this.data.imgsrc;
+        for (var i = 0; i < fileArr.length;i++){
+          arr.push(fileArr[i]);
+        }
+        console.log(arr);
+        this.setData({
+          imgsrc:arr
+        })
+      }
+    })
   },
-  success:function(res){
-    console.log(res);
-  },
-  error:function(error){
-   console.log(error)
-  }
-})
+  showImg (e){
+    const url=e.currentTarget.dataset.src;
+    //获取图片的信息
+    wx.getImageInfo({
+      src: url,
+      success(res) {
+        console.log(res.width+';'+res.type)
+        console.log(res.height)
+        console.log(res.path);
+        console.log(res.orientation)
+      }
+    })
+    //预览图片
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
+    })
   },
   resetAll (){
 

@@ -1,5 +1,11 @@
 <!--pages/form/form.wxml-->
 <text>radio</text>
+<view class="cont">
+<block wx:for="{{imgsrc}}">
+<image src="{{item}}" catchtap="showImg" data-src="{{item}}"/>
+</block>
+</view>
+
 <form bindsubmit="getAllVal" bindreset='resetAll'>
 <radio-group bindchange="getValue" name="aa-radio">
 <radio checked value="radio0">香蕉2</radio>
