@@ -1,15 +1,14 @@
 {
   "pages": [
-    "pages/form/form",
-        "pages/movie/movie",
-   
+    "pages/index0/index0",
+    "pages/movie/movie",
     "pages/map/map",
     "pages/post/post",
-
     "pages/movie/moremovie/moremovie",
-    "pages/index0/index0",
     "pages/detail/detail",
-    "pages/movieDetail/movieDetail"
+    "pages/movieDetail/movieDetail",
+          "pages/form/form"
+  
   ],
   "permission": {
     "scope.userLocation": {

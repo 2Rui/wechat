@@ -14,6 +14,7 @@ Page({
   getValue (e){
     console.log(e.detail.value)
   },
+
   getAllVal (e){
 console.log(e.detail.value);
  //上传图片
@@ -30,16 +31,26 @@ console.log(e.detail.value);
         var arr=this.data.imgsrc;
         for (var i = 0; i < fileArr.length;i++){
           arr.push(fileArr[i]);
+          //保存文件到本地
+          // wx.saveFile({
+          //   tempFilePath: fileArr[i],
+          //   success:(resaa)=>{
+          //     console.log(resaa.savedFilePath+'储存后的路径');//储存后的文件路径
+          //     arr.push(resaa.savedFilePath);
+          //   }
+          // })
         }
-        console.log(arr);
+        
         this.setData({
           imgsrc:arr
-        })
+        });
+        console.log(this.data.imgsrc);
       }
     })
   },
   showImg (e){
     const url=e.currentTarget.dataset.src;
+    console.log(url)
     //获取图片的信息
     wx.getImageInfo({
       src: url,
@@ -57,7 +68,16 @@ console.log(e.detail.value);
     })
   },
   resetAll (){
-
+   //上传文件
+    wx.chooseMessageFile({
+      count: 10,
+      type: 'all',
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        console.log(tempFilePaths)
+      }
+    })
   },
   onLoad: function (options) {
 

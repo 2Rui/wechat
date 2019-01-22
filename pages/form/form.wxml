@@ -2,6 +2,7 @@
 <text>radio</text>
 <view class="cont">
 <block wx:for="{{imgsrc}}">
+<text>{{index}}</text>
 <image src="{{item}}" catchtap="showImg" data-src="{{item}}"/>
 </block>
 </view>
