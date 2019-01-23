@@ -1,5 +1,6 @@
 {
   "pages": [
+     
     "pages/index0/index0",
     "pages/movie/movie",
     "pages/map/map",
@@ -7,7 +8,8 @@
     "pages/movie/moremovie/moremovie",
     "pages/detail/detail",
     "pages/movieDetail/movieDetail",
-          "pages/form/form"
+        "pages/form/form"
+    
   
   ],
   "permission": {

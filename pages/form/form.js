@@ -68,16 +68,21 @@ console.log(e.detail.value);
     })
   },
   resetAll (){
-   //上传文件
-    wx.chooseMessageFile({
-      count: 10,
-      type: 'all',
+    wx.getSavedFileList({
       success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths)
+        console.log(res.fileList)
       }
     })
+   //从客户端上传文件
+    // wx.chooseMessageFile({
+    //   count: 10,
+    //   type:'file',
+    //   success(res) {
+    //     // tempFilePath可以作为img标签的src属性显示图片
+    //     const tempFilePaths = res.tempFiles;//path name size type time
+    //     console.log(tempFilePaths[0].name+'客户端文件路径')
+    //   }
+    // })
   },
   onLoad: function (options) {
 
